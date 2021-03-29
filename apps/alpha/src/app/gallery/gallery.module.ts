@@ -1,20 +1,21 @@
+import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { HomePage } from './home.page';
-
-import { HomePageRoutingModule } from './home-routing.module';
 import { MyorgCommonModule } from '@myorg/common';
+
+import { GalleryPage } from './gallery.page';
+
+import { GalleryRoutingModule } from './gallery-routing.module';
 
 @NgModule({
   imports: [
+    IonicModule,
     CommonModule,
     FormsModule,
-    IonicModule,
-    HomePageRoutingModule,
+    GalleryRoutingModule,
     MyorgCommonModule,
   ],
-  declarations: [HomePage],
+  declarations: [GalleryPage],
 })
-export class HomePageModule {}
+export class GalleryPageModule {}
