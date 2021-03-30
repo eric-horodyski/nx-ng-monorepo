@@ -8,11 +8,7 @@ import {
 } from '@capacitor/core';
 import { Injectable } from '@angular/core';
 import { Platform } from '@ionic/angular';
-
-export interface Photo {
-  filepath: string;
-  webviewPath: string;
-}
+import { Photo } from './photo.model';
 
 @Injectable({ providedIn: 'root' })
 export class CameraService {

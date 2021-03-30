@@ -26,9 +26,7 @@
             ],
             "styles": [
               "apps/alpha/src/styles.scss",
-              {
-                "input": "apps/alpha/src/theme/variables.scss"
-              }
+              { "input": "apps/alpha/src/theme/variables.scss" }
             ],
             "scripts": []
           },
@@ -64,20 +62,14 @@
         },
         "serve": {
           "executor": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "alpha:build"
-          },
+          "options": { "browserTarget": "alpha:build" },
           "configurations": {
-            "production": {
-              "browserTarget": "alpha:build:production"
-            }
+            "production": { "browserTarget": "alpha:build:production" }
           }
         },
         "extract-i18n": {
           "executor": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "alpha:build"
-          }
+          "options": { "browserTarget": "alpha:build" }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
@@ -90,9 +82,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/alpha"
-          ],
+          "outputs": ["coverage/apps/alpha"],
           "options": {
             "jestConfig": "apps/alpha/jest.config.js",
             "passWithNoTests": true
@@ -100,83 +90,46 @@
         },
         "cap": {
           "executor": "@nxtend/capacitor:cap",
-          "options": {
-            "cmd": "--help"
-          }
+          "options": { "cmd": "--help" }
         },
         "add": {
           "executor": "@nxtend/capacitor:cap",
-          "options": {
-            "cmd": "add",
-            "packageInstall": true
-          },
+          "options": { "cmd": "add", "packageInstall": true },
           "configurations": {
-            "ios": {
-              "cmd": "add ios"
-            },
-            "android": {
-              "cmd": "add android"
-            }
+            "ios": { "cmd": "add ios" },
+            "android": { "cmd": "add android" }
           }
         },
         "copy": {
           "executor": "@nxtend/capacitor:cap",
-          "options": {
-            "cmd": "copy",
-            "packageInstall": false
-          },
+          "options": { "cmd": "copy", "packageInstall": false },
           "configurations": {
-            "ios": {
-              "cmd": "copy ios"
-            },
-            "android": {
-              "cmd": "copy android"
-            }
+            "ios": { "cmd": "copy ios" },
+            "android": { "cmd": "copy android" }
           }
         },
         "open": {
           "executor": "@nxtend/capacitor:cap",
-          "options": {
-            "cmd": "open",
-            "packageInstall": false
-          },
+          "options": { "cmd": "open", "packageInstall": false },
           "configurations": {
-            "ios": {
-              "cmd": "open ios"
-            },
-            "android": {
-              "cmd": "open android"
-            }
+            "ios": { "cmd": "open ios" },
+            "android": { "cmd": "open android" }
           }
         },
         "sync": {
           "executor": "@nxtend/capacitor:cap",
-          "options": {
-            "cmd": "sync",
-            "packageInstall": true
-          },
+          "options": { "cmd": "sync", "packageInstall": true },
           "configurations": {
-            "ios": {
-              "cmd": "sync ios"
-            },
-            "android": {
-              "cmd": "sync android"
-            }
+            "ios": { "cmd": "sync ios" },
+            "android": { "cmd": "sync android" }
           }
         },
         "update": {
           "executor": "@nxtend/capacitor:cap",
-          "options": {
-            "cmd": "update",
-            "packageInstall": true
-          },
+          "options": { "cmd": "update", "packageInstall": true },
           "configurations": {
-            "ios": {
-              "cmd": "update ios"
-            },
-            "android": {
-              "cmd": "update android"
-            }
+            "ios": { "cmd": "update ios" },
+            "android": { "cmd": "update android" }
           }
         }
       }
@@ -198,9 +151,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/common"
-          ],
+          "outputs": ["coverage/libs/common"],
           "options": {
             "jestConfig": "libs/common/jest.config.js",
             "passWithNoTests": true
@@ -209,9 +160,7 @@
       }
     }
   },
-  "cli": {
-    "defaultCollection": "@nxtend/ionic-angular"
-  },
+  "cli": { "defaultCollection": "@nxtend/ionic-angular" },
   "generators": {
     "@nrwl/angular:application": {
       "style": "scss",
@@ -224,9 +173,7 @@
       "linter": "eslint",
       "unitTestRunner": "jest"
     },
-    "@nrwl/angular:component": {
-      "style": "scss"
-    }
+    "@nrwl/angular:component": { "style": "scss" }
   },
   "defaultProject": "alpha"
 }
