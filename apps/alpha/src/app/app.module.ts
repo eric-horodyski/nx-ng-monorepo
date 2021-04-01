@@ -19,7 +19,6 @@ import { AppComponent } from './app.component';
     MyorgCommonModule.forRoot({
       name: environment.name,
       api: environment.api,
-      templatePath: environment.templatePath,
     }),
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

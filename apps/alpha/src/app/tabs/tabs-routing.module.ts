@@ -18,9 +18,9 @@ const routes: Routes = [
           import('../users/users.module').then((m) => m.UsersPageModule),
       },
       {
-        path: 'tab3',
+        path: 'about',
         loadChildren: () =>
-          import('../tab3/tab3.module').then((m) => m.Tab3PageModule),
+          import('@myorg/common').then((m) => m.AboutPageModule),
       },
       {
         path: '',

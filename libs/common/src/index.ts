@@ -5,3 +5,6 @@ export * from './lib/camera/photo.model';
 export * from './lib/injection/tokens.model';
 export * from './lib/injection/injection.tokens';
 export * from './lib/user.service';
+export * from './lib/about/about-routing.module';
+export * from './lib/about/about.module';
+export * from './lib/about/about.page';
