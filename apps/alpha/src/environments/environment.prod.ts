@@ -4,5 +4,5 @@ export const environment: Environment = {
   production: true,
   name: 'Alpha Corp',
   templatePath: './templates/',
-  api: 'https://randomuser.me/api/?results=10',
+  api: 'https://randomuser.me/api/?results=5',
 };
