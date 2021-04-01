@@ -1,11 +1,12 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { IonicModule } from '@ionic/angular';
 
 import { CameraComponent } from './camera/camera.component';
 import { TOKENS } from './injection/injection.tokens';
 import { Tokens } from './injection/tokens.model';
+import { AuthInterceptor } from './auth.interceptor';
 
 @NgModule({
   imports: [CommonModule, IonicModule, HttpClientModule],
@@ -16,7 +17,10 @@ export class MyorgCommonModule {
   static forRoot(config: Tokens): ModuleWithProviders<MyorgCommonModule> {
     return {
       ngModule: MyorgCommonModule,
-      providers: [{ provide: TOKENS, useValue: config }],
+      providers: [
+        { provide: TOKENS, useValue: config },
+        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+      ],
     };
   }
 }
