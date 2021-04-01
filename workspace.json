@@ -158,6 +158,139 @@
           }
         }
       }
+    },
+    "bravo": {
+      "projectType": "application",
+      "root": "apps/bravo",
+      "sourceRoot": "apps/bravo/src",
+      "prefix": "myorg",
+      "targets": {
+        "build": {
+          "executor": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/bravo",
+            "index": "apps/bravo/src/index.html",
+            "main": "apps/bravo/src/main.ts",
+            "polyfills": "apps/bravo/src/polyfills.ts",
+            "tsConfig": "apps/bravo/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/bravo/src/assets",
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "./svg"
+              }
+            ],
+            "styles": [
+              "apps/bravo/src/styles.scss",
+              { "input": "apps/bravo/src/theme/variables.scss" }
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/bravo/src/environments/environment.ts",
+                  "with": "apps/bravo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@angular-devkit/build-angular:dev-server",
+          "options": { "browserTarget": "bravo:build" },
+          "configurations": {
+            "production": { "browserTarget": "bravo:build:production" }
+          }
+        },
+        "extract-i18n": {
+          "executor": "@angular-devkit/build-angular:extract-i18n",
+          "options": { "browserTarget": "bravo:build" }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/bravo/src/**/*.ts",
+              "apps/bravo/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/bravo"],
+          "options": {
+            "jestConfig": "apps/bravo/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "cap": {
+          "executor": "@nxtend/capacitor:cap",
+          "options": { "cmd": "--help" }
+        },
+        "add": {
+          "executor": "@nxtend/capacitor:cap",
+          "options": { "cmd": "add", "packageInstall": true },
+          "configurations": {
+            "ios": { "cmd": "add ios" },
+            "android": { "cmd": "add android" }
+          }
+        },
+        "copy": {
+          "executor": "@nxtend/capacitor:cap",
+          "options": { "cmd": "copy", "packageInstall": false },
+          "configurations": {
+            "ios": { "cmd": "copy ios" },
+            "android": { "cmd": "copy android" }
+          }
+        },
+        "open": {
+          "executor": "@nxtend/capacitor:cap",
+          "options": { "cmd": "open", "packageInstall": false },
+          "configurations": {
+            "ios": { "cmd": "open ios" },
+            "android": { "cmd": "open android" }
+          }
+        },
+        "sync": {
+          "executor": "@nxtend/capacitor:cap",
+          "options": { "cmd": "sync", "packageInstall": true },
+          "configurations": {
+            "ios": { "cmd": "sync ios" },
+            "android": { "cmd": "sync android" }
+          }
+        },
+        "update": {
+          "executor": "@nxtend/capacitor:cap",
+          "options": { "cmd": "update", "packageInstall": true },
+          "configurations": {
+            "ios": { "cmd": "update ios" },
+            "android": { "cmd": "update android" }
+          }
+        }
+      }
     }
   },
   "cli": { "defaultCollection": "@nxtend/ionic-angular" },

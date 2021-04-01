@@ -15,5 +15,9 @@
       "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
-  "projects": { "alpha": { "tags": [] }, "common": { "tags": [] } }
+  "projects": {
+    "alpha": { "tags": [] },
+    "common": { "tags": [] },
+    "bravo": { "tags": [] }
+  }
 }

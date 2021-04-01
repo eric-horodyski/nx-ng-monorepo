@@ -1,0 +1,13 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "bravo",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "../../dist/apps/bravo",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

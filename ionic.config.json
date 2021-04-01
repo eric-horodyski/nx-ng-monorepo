@@ -1,3 +1,20 @@
 {
-  "projects": {}
+  "projects": {
+    "alpha": {
+      "name": "alpha",
+      "integrations": {
+        "capacitor": {}
+      },
+      "type": "angular",
+      "root": "apps/alpha"
+    },
+    "bravo": {
+      "name": "bravo",
+      "integrations": {
+        "capacitor": {}
+      },
+      "type": "angular",
+      "root": "apps/bravo"
+    }
+  }
 }

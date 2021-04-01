@@ -1,0 +1,7 @@
+{
+  "name": "bravo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
